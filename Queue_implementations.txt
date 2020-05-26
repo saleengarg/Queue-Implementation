@@ -1,0 +1,36 @@
+class Queue:					#FIFO structure
+    def __init__(self):
+        self.Queue=[]
+    def isempty(self):
+        return self.Queue==[]
+    def enqueue(self,data):			#This method add an item in the queue.
+        self.Queue.append(data)
+    def dequeue(self):				#This method return the first element of the queue by removing it from the queue.
+        data=self.Queue[0]
+        del self.Queue[0]
+        return data
+    def peek(self):				#This method return the first element of the queue without removing it from the queue.
+        return self.Queue[0]
+    def issize(self):				#This method return the size of the queue.
+        return len(self.Queue)
+
+queue=Queue()
+queue.enqueue(10)
+queue.enqueue(20)
+queue.enqueue(30)
+queue.enqueue(40)
+queue.enqueue(50)
+queue.enqueue(60)
+print(queue.issize())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.peek())
+print(queue.issize())
+
+
+#OUTPUT
+#6
+#10
+#20
+#30
+#4
